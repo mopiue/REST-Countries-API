@@ -1,4 +1,4 @@
-import { SET_SERACH, SET_REGION } from './controls-action'
+import { SET_SERACH, SET_REGION, CLEAR_CONTROLS } from './controls-action'
 
 const initialState = {
   search: '',
@@ -18,6 +18,10 @@ export const controlsReducer = (state = initialState, { type, payload }) => {
         ...state,
         region: payload,
       }
+    }
+
+    case CLEAR_CONTROLS: {
+      return initialState
     }
 
     default:
